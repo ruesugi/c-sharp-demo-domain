@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp-demo-domain.WinForm", "c-sharp-demo-domain.WinForm\c-sharp-demo-domain.WinForm.csproj", "{1BCEC8EB-8360-4FA7-B9C7-69DF117B5D73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp-demo.WinForm", "c-sharp-demo-domain.WinForm\c-sharp-demo.WinForm.csproj", "{1BCEC8EB-8360-4FA7-B9C7-69DF117B5D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp-demo.Domain", "c-sharp-demo.Domain\c-sharp-demo.Domain.csproj", "{93651A2D-AB92-4923-A6B4-01B0F7085D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp-demo.Test", "c-sharp-demo.Test\c-sharp-demo.Test.csproj", "{578E2064-22F4-46BA-B46E-B95518AA8765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c-sharp-demo.Infrastructure", "c-sharp-demo.Infrastructure\c-sharp-demo.Infrastructure.csproj", "{5DA1BFDE-DCC3-408D-848A-4E0E59FD4151}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{1BCEC8EB-8360-4FA7-B9C7-69DF117B5D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BCEC8EB-8360-4FA7-B9C7-69DF117B5D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BCEC8EB-8360-4FA7-B9C7-69DF117B5D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93651A2D-AB92-4923-A6B4-01B0F7085D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93651A2D-AB92-4923-A6B4-01B0F7085D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93651A2D-AB92-4923-A6B4-01B0F7085D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93651A2D-AB92-4923-A6B4-01B0F7085D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{578E2064-22F4-46BA-B46E-B95518AA8765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{578E2064-22F4-46BA-B46E-B95518AA8765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{578E2064-22F4-46BA-B46E-B95518AA8765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{578E2064-22F4-46BA-B46E-B95518AA8765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA1BFDE-DCC3-408D-848A-4E0E59FD4151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA1BFDE-DCC3-408D-848A-4E0E59FD4151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA1BFDE-DCC3-408D-848A-4E0E59FD4151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA1BFDE-DCC3-408D-848A-4E0E59FD4151}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

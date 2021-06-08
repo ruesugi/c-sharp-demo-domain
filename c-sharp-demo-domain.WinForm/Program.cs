@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace c_sharp_demo_domain.WinForm
+namespace c_sharp_demo.WinForm
 {
     static class Program
     {

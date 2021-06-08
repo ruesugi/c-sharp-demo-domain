@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace c_sharp_demo_domain.WinForm
+namespace c_sharp_demo.WinForm
 {
     public partial class Form1 : Form
     {

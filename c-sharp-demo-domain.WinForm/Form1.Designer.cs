@@ -1,5 +1,5 @@
 ﻿
-namespace c_sharp_demo_domain.WinForm
+namespace c_sharp_demo.WinForm
 {
     partial class Form1
     {
