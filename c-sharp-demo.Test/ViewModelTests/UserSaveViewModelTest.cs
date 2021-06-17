@@ -20,6 +20,12 @@ namespace c_sharp_demo.Test.ViewModelTests
 
             viewModel.MailAddressLabelEnabled.Is(true);
             viewModel.MailAddressTextBoxEnabled.Is(true);
+
+            viewModel.MailCheckBoxChecked = false;
+            viewModel.ChangeMailAddressEnabled();
+
+            viewModel.MailAddressLabelEnabled.Is(false);
+            viewModel.MailAddressTextBoxEnabled.Is(false);
         }
     }
 }
