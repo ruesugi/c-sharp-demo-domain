@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using c_sharp_demo_domain.WinForm.ViewModels;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace c_sharp_demo.Test.ViewModelTests
 {
@@ -9,6 +9,11 @@ namespace c_sharp_demo.Test.ViewModelTests
         [TestMethod]
         public void メールを送信するにチェックがあるときだけメールアドレスが入力できることのテスト()
         {
+            var viewModel = new UserSaveViewModel();
+
+            viewModel.MailCheckBoxChecked.Is(false);
+            viewModel.MailAddressLabelEnabled.Is(false);
+            viewModel.MailAddressTextBoxEnabled.Is(false);
         }
     }
 }

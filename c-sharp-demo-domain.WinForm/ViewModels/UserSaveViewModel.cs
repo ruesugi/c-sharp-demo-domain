@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
-    class UserSaveViewModel
+    public class UserSaveViewModel
     {
     }
 }
