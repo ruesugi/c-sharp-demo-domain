@@ -1,10 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace c_sharp_demo.Test
+namespace c_sharp_demo.Test.ViewModelTests
 {
     [TestClass]
-    public class UnitTest1
+    public class UserSaveViewModelTest
     {
         [TestMethod]
         public void TestMethod1()

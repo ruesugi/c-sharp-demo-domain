@@ -49,11 +49,26 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModelTests\UserSaveViewModelTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\c-sharp-demo-domain.WinForm\c-sharp-demo.WinForm.csproj">
+      <Project>{1bcec8eb-8360-4fa7-b9c7-69df117b5d73}</Project>
+      <Name>c-sharp-demo.WinForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\c-sharp-demo.Domain\c-sharp-demo.Domain.csproj">
+      <Project>{93651a2d-ab92-4923-a6b4-01b0f7085d04}</Project>
+      <Name>c-sharp-demo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\c-sharp-demo.Infrastructure\c-sharp-demo.Infrastructure.csproj">
+      <Project>{5da1bfde-dcc3-408d-848a-4e0e59fd4151}</Project>
+      <Name>c-sharp-demo.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
