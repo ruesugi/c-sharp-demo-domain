@@ -14,8 +14,17 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 
         public void ChangeMailAddressEnabled()
         {
-            MailAddressLabelEnabled = true;
-            MailAddressTextBoxEnabled = true;
+            if (MailCheckBoxChecked)
+            {
+                MailAddressLabelEnabled = true;
+                MailAddressTextBoxEnabled = true;
+            }
+            else
+            {
+                MailAddressLabelEnabled = false;
+                MailAddressTextBoxEnabled = false;
+            }
+
         }
     }
 }
