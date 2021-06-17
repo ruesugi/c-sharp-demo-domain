@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace c_sharp_demo.WinForm
 {
-    public partial class Form1 : Form
+    public partial class UserSaveView : Form
     {
-        public Form1()
+        public UserSaveView()
         {
             InitializeComponent();
         }
