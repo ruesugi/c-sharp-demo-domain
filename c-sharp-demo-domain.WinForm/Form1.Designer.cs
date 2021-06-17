@@ -29,20 +29,44 @@ namespace c_sharp_demo.WinForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.IDLabel = new System.Windows.Forms.Label();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // IDLabel
+            // 
+            this.IDLabel.AutoSize = true;
+            this.IDLabel.Location = new System.Drawing.Point(13, 13);
+            this.IDLabel.Name = "IDLabel";
+            this.IDLabel.Size = new System.Drawing.Size(16, 12);
+            this.IDLabel.TabIndex = 0;
+            this.IDLabel.Text = "ID";
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Location = new System.Drawing.Point(35, 10);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(100, 19);
+            this.IDTextBox.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
+            this.Controls.Add(this.IDTextBox);
+            this.Controls.Add(this.IDLabel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label IDLabel;
+        private System.Windows.Forms.TextBox IDTextBox;
     }
 }
 
