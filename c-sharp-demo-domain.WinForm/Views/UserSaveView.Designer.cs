@@ -31,6 +31,9 @@ namespace c_sharp_demo.WinForm
         {
             this.IDLabel = new System.Windows.Forms.Label();
             this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.MailCheckBox = new System.Windows.Forms.CheckBox();
+            this.MailAddressLabel = new System.Windows.Forms.Label();
+            this.MailAddressTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // IDLabel
@@ -49,11 +52,40 @@ namespace c_sharp_demo.WinForm
             this.IDTextBox.Size = new System.Drawing.Size(100, 19);
             this.IDTextBox.TabIndex = 1;
             // 
+            // MailCheckBox
+            // 
+            this.MailCheckBox.AutoSize = true;
+            this.MailCheckBox.Location = new System.Drawing.Point(15, 44);
+            this.MailCheckBox.Name = "MailCheckBox";
+            this.MailCheckBox.Size = new System.Drawing.Size(104, 16);
+            this.MailCheckBox.TabIndex = 2;
+            this.MailCheckBox.Text = "メールを送信する";
+            this.MailCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // MailAddressLabel
+            // 
+            this.MailAddressLabel.AutoSize = true;
+            this.MailAddressLabel.Location = new System.Drawing.Point(15, 67);
+            this.MailAddressLabel.Name = "MailAddressLabel";
+            this.MailAddressLabel.Size = new System.Drawing.Size(69, 12);
+            this.MailAddressLabel.TabIndex = 3;
+            this.MailAddressLabel.Text = "メールアドレス";
+            // 
+            // MailAddressTextBox
+            // 
+            this.MailAddressTextBox.Location = new System.Drawing.Point(90, 64);
+            this.MailAddressTextBox.Name = "MailAddressTextBox";
+            this.MailAddressTextBox.Size = new System.Drawing.Size(100, 19);
+            this.MailAddressTextBox.TabIndex = 4;
+            // 
             // UserSaveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
+            this.Controls.Add(this.MailAddressTextBox);
+            this.Controls.Add(this.MailAddressLabel);
+            this.Controls.Add(this.MailCheckBox);
             this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.IDLabel);
             this.Name = "UserSaveView";
@@ -67,6 +99,9 @@ namespace c_sharp_demo.WinForm
 
         private System.Windows.Forms.Label IDLabel;
         private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.CheckBox MailCheckBox;
+        private System.Windows.Forms.Label MailAddressLabel;
+        private System.Windows.Forms.TextBox MailAddressTextBox;
     }
 }
 
