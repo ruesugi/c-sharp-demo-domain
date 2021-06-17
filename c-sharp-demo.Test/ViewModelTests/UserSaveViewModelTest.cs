@@ -7,7 +7,7 @@ namespace c_sharp_demo.Test.ViewModelTests
     public class UserSaveViewModelTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void メールを送信するにチェックがあるときだけメールアドレスが入力できることのテスト()
         {
         }
     }
