@@ -8,8 +8,8 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel
     {
-        public object MailCheckBoxChecked { get; set; }
-        public object MailAddressLabelEnabled { get; set; }
-        public object MailAddressTextBoxEnabled { get; set; }
+        public bool MailCheckBoxChecked { get; set; }
+        public bool MailAddressLabelEnabled { get; set; }
+        public bool MailAddressTextBoxEnabled { get; set; }
     }
 }
