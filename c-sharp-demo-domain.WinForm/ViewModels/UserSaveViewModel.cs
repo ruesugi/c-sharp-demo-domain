@@ -14,7 +14,8 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 
         public void ChangeMailAddressEnabled()
         {
-            throw new NotImplementedException();
+            MailAddressLabelEnabled = true;
+            MailAddressTextBoxEnabled = true;
         }
     }
 }
