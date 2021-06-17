@@ -1,7 +1,7 @@
 ﻿
 namespace c_sharp_demo.WinForm
 {
-    partial class Form1
+    partial class UserSaveView
     {
         /// <summary>
         /// 必要なデザイナー変数です。
@@ -49,15 +49,15 @@ namespace c_sharp_demo.WinForm
             this.IDTextBox.Size = new System.Drawing.Size(100, 19);
             this.IDTextBox.TabIndex = 1;
             // 
-            // Form1
+            // UserSaveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
             this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.IDLabel);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "UserSaveView";
+            this.Text = "ユーザー登録";
             this.ResumeLayout(false);
             this.PerformLayout();
 
