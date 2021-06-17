@@ -11,5 +11,10 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public bool MailCheckBoxChecked { get; set; }
         public bool MailAddressLabelEnabled { get; set; }
         public bool MailAddressTextBoxEnabled { get; set; }
+
+        public void ChangeMailAddressEnabled()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
