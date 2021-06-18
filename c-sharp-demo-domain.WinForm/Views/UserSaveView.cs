@@ -5,7 +5,7 @@ namespace c_sharp_demo.WinForm
 {
     public partial class UserSaveView : Form
     {
-        private UserSaveViewModel _viewModel = new UserSaveViewModel();
+        private readonly UserSaveViewModel _viewModel = new UserSaveViewModel();
 
         public UserSaveView()
         {
