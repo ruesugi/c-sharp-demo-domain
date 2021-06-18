@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ViewModels\UserSaveViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\UserSaveView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +81,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\c-sharp-demo.Domain\c-sharp-demo.Domain.csproj">
+      <Project>{93651a2d-ab92-4923-a6b4-01b0f7085d04}</Project>
+      <Name>c-sharp-demo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\c-sharp-demo.Infrastructure\c-sharp-demo.Infrastructure.csproj">
+      <Project>{5da1bfde-dcc3-408d-848a-4e0e59fd4151}</Project>
+      <Name>c-sharp-demo.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

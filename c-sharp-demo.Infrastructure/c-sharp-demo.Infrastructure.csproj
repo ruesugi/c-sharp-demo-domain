@@ -44,5 +44,11 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\c-sharp-demo.Domain\c-sharp-demo.Domain.csproj">
+      <Project>{93651a2d-ab92-4923-a6b4-01b0f7085d04}</Project>
+      <Name>c-sharp-demo.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
