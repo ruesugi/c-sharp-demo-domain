@@ -2,16 +2,18 @@
 {
     public class UserSaveViewModel : ViewModelBase
     {
-        private bool _mailCheckBoxCheced = false;
+        private bool _mailCheckBoxChecked = false;
         public bool MailCheckBoxChecked {
-            get { return _mailCheckBoxCheced; }
+            get { return _mailCheckBoxChecked; }
             set
             {
-                SetProperty(ref _mailCheckBoxCheced, value);
+                SetProperty(ref _mailCheckBoxChecked, value);
             } 
         }
         public bool MailAddressLabelEnabled { get; set; }
         public bool MailAddressTextBoxEnabled { get; set; }
+        public object FreeRadioButtonChecked { get; set; }
+        public object BusinessRadioButtonChecked { get; set; }
 
         public void ChangeMailAddressEnabled()
         {
