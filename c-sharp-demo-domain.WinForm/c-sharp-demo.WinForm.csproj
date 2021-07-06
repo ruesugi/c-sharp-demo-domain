@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindHelpers\BindableRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ViewModels\UserSaveViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\UserSaveView.cs">
@@ -91,5 +94,6 @@
       <Name>c-sharp-demo.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
