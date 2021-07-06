@@ -25,6 +25,18 @@ namespace c_sharp_demo.WinForm
                 "Enabled",
                 _viewModel,
                 nameof(_viewModel.MailAddressTextBoxEnabled));
+            FreeRadioButton.DataBindings.Add(
+                "Checked",
+                _viewModel,
+                nameof(_viewModel.FreeRadioButtonChecked),
+                false,
+                DataSourceUpdateMode.OnPropertyChanged);
+            BusinessRadioButton.DataBindings.Add(
+                "Checked",
+                _viewModel,
+                nameof(_viewModel.BusinessRadioButtonChecked),
+                false,
+                DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private readonly Binding _mailCheckBoxBinding;
