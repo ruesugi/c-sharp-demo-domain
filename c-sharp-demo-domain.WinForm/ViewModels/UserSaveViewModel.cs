@@ -50,6 +50,15 @@
             }
         }
 
+        private bool _noteLabelVisible = false;
+        public bool NoteLabelVisible {
+            get { return _noteLabelVisible; }
+            set 
+            {
+                SetProperty(ref _noteLabelVisible, value);
+            }
+        }
+
         public void ChangeMailAddressEnabled()
         {
             MailAddressLabelEnabled = MailCheckBoxChecked;

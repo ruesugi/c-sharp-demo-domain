@@ -35,15 +35,19 @@ namespace c_sharp_demo.Test.ViewModelTests
 
             viewModel.FreeRadioButtonChecked.Is(false);
             viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(false);
 
             viewModel.FreeRadioButtonChecked = true;
             viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(false);
 
             viewModel.BusinessRadioButtonChecked = true;
             viewModel.FreeRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(true);
 
             viewModel.FreeRadioButtonChecked = true;
             viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(false);
         }
     }
 }
