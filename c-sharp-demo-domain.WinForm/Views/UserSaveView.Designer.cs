@@ -106,6 +106,7 @@ namespace c_sharp_demo.WinForm
             this.BusinessRadioButton.TabStop = true;
             this.BusinessRadioButton.Text = "ビジネス";
             this.BusinessRadioButton.UseVisualStyleBackColor = true;
+            this.BusinessRadioButton.CheckedChanged += new System.EventHandler(this.BusinessRadioButton_CheckedChanged);
             // 
             // FreeRadioButton
             // 

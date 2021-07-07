@@ -11,7 +11,7 @@ namespace c_sharp_demo.WinForm
         {
             InitializeComponent();
 
-            _mailCheckBoxBinding = MailCheckBox.DataBindings.Add(
+            MailCheckBox.DataBindings.Add(
                 "Checked",
                 _viewModel,
                 nameof(_viewModel.MailCheckBoxChecked),
@@ -37,14 +37,22 @@ namespace c_sharp_demo.WinForm
                 nameof(_viewModel.BusinessRadioButtonChecked),
                 false,
                 DataSourceUpdateMode.OnPropertyChanged);
+            NoteLabel.DataBindings.Add(
+                "Visible",
+                _viewModel,
+                nameof(_viewModel.NoteLabelVisible));
         }
-
-        private readonly Binding _mailCheckBoxBinding;
 
         private void MailCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            _mailCheckBoxBinding.WriteValue();
+            MailCheckBox.DataBindings[0].WriteValue();
             _viewModel.ChangeMailAddressEnabled();
+        }
+
+        private void BusinessRadioButton_CheckedChanged(object sender, System.EventArgs e)
+        {
+            BusinessRadioButton.DataBindings[0].WriteValue();
+            _viewModel.ChangeNoteLabelVisible();
         }
     }
 }
