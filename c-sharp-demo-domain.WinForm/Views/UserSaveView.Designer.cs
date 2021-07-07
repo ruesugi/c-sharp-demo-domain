@@ -34,6 +34,11 @@ namespace c_sharp_demo.WinForm
             this.MailCheckBox = new System.Windows.Forms.CheckBox();
             this.MailAddressLabel = new System.Windows.Forms.Label();
             this.MailAddressTextBox = new System.Windows.Forms.TextBox();
+            this.PricePlanGroupBox = new System.Windows.Forms.GroupBox();
+            this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
+            this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
+            this.NoteLabel = new System.Windows.Forms.Label();
+            this.PricePlanGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // IDLabel
@@ -79,11 +84,58 @@ namespace c_sharp_demo.WinForm
             this.MailAddressTextBox.Size = new System.Drawing.Size(100, 19);
             this.MailAddressTextBox.TabIndex = 4;
             // 
+            // PricePlanGroupBox
+            // 
+            this.PricePlanGroupBox.Controls.Add(this.BusinessRadioButton);
+            this.PricePlanGroupBox.Controls.Add(this.FreeRadioButton);
+            this.PricePlanGroupBox.Location = new System.Drawing.Point(17, 99);
+            this.PricePlanGroupBox.Name = "PricePlanGroupBox";
+            this.PricePlanGroupBox.Size = new System.Drawing.Size(200, 70);
+            this.PricePlanGroupBox.TabIndex = 5;
+            this.PricePlanGroupBox.TabStop = false;
+            this.PricePlanGroupBox.Text = "プラン";
+            // 
+            // BusinessRadioButton
+            // 
+            this.BusinessRadioButton.AutoCheck = false;
+            this.BusinessRadioButton.AutoSize = true;
+            this.BusinessRadioButton.Location = new System.Drawing.Point(113, 30);
+            this.BusinessRadioButton.Name = "BusinessRadioButton";
+            this.BusinessRadioButton.Size = new System.Drawing.Size(60, 16);
+            this.BusinessRadioButton.TabIndex = 1;
+            this.BusinessRadioButton.TabStop = true;
+            this.BusinessRadioButton.Text = "ビジネス";
+            this.BusinessRadioButton.UseVisualStyleBackColor = true;
+            this.BusinessRadioButton.CheckedChanged += new System.EventHandler(this.BusinessRadioButton_CheckedChanged);
+            // 
+            // FreeRadioButton
+            // 
+            this.FreeRadioButton.AutoCheck = false;
+            this.FreeRadioButton.AutoSize = true;
+            this.FreeRadioButton.Location = new System.Drawing.Point(18, 30);
+            this.FreeRadioButton.Name = "FreeRadioButton";
+            this.FreeRadioButton.Size = new System.Drawing.Size(47, 16);
+            this.FreeRadioButton.TabIndex = 0;
+            this.FreeRadioButton.TabStop = true;
+            this.FreeRadioButton.Text = "無料";
+            this.FreeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // NoteLabel
+            // 
+            this.NoteLabel.AutoSize = true;
+            this.NoteLabel.Location = new System.Drawing.Point(15, 172);
+            this.NoteLabel.Name = "NoteLabel";
+            this.NoteLabel.Size = new System.Drawing.Size(91, 12);
+            this.NoteLabel.TabIndex = 6;
+            this.NoteLabel.Text = "無制限で使えます";
+            // 
             // UserSaveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
+            this.Controls.Add(this.NoteLabel);
+            this.Controls.Add(this.PricePlanGroupBox);
             this.Controls.Add(this.MailAddressTextBox);
             this.Controls.Add(this.MailAddressLabel);
             this.Controls.Add(this.MailCheckBox);
@@ -91,6 +143,8 @@ namespace c_sharp_demo.WinForm
             this.Controls.Add(this.IDLabel);
             this.Name = "UserSaveView";
             this.Text = "ユーザー登録";
+            this.PricePlanGroupBox.ResumeLayout(false);
+            this.PricePlanGroupBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -103,6 +157,10 @@ namespace c_sharp_demo.WinForm
         private System.Windows.Forms.CheckBox MailCheckBox;
         private System.Windows.Forms.Label MailAddressLabel;
         private System.Windows.Forms.TextBox MailAddressTextBox;
+        private System.Windows.Forms.GroupBox PricePlanGroupBox;
+        private c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton BusinessRadioButton;
+        private c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton FreeRadioButton;
+        private System.Windows.Forms.Label NoteLabel;
     }
 }
 

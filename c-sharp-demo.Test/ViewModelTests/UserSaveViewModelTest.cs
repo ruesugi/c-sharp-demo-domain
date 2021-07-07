@@ -27,5 +27,29 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.MailAddressLabelEnabled.Is(false);
             viewModel.MailAddressTextBoxEnabled.Is(false);
         }
+
+        [TestMethod]
+        public void 料金プランの選択ができることのテスト()
+        {
+            var viewModel = new UserSaveViewModel();
+
+            viewModel.FreeRadioButtonChecked.Is(false);
+            viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(false);
+
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.NoteLabelVisible.Is(false);
+
+            viewModel.BusinessRadioButtonChecked = true;
+            viewModel.FreeRadioButtonChecked.Is(false);
+            viewModel.ChangeNoteLabelVisible();
+            viewModel.NoteLabelVisible.Is(true);
+
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.BusinessRadioButtonChecked.Is(false);
+            viewModel.ChangeNoteLabelVisible();
+            viewModel.NoteLabelVisible.Is(false);
+        }
     }
 }
