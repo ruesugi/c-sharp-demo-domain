@@ -21,6 +21,14 @@
             set
             {
                 SetProperty(ref _freeRadioButtonChecked, value);
+
+                if (value)
+                {
+                    SetProperty(
+                        ref _businnesRadioButtonChecked,
+                        false,
+                        nameof(BusinessRadioButtonChecked));
+                }
             }
         }
 
@@ -31,6 +39,14 @@
             set
             {
                 SetProperty(ref _businnesRadioButtonChecked, value);
+
+                if (value)
+                {
+                    SetProperty(
+                        ref _freeRadioButtonChecked,
+                        false,
+                        nameof(FreeRadioButtonChecked));
+                }
             }
         }
 
