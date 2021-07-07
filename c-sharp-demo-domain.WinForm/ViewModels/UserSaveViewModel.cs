@@ -63,7 +63,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             }
         }
 
-        public object EnableComboBocSelectedValue { get; set; }
+        public object EnableComboBoxSelectedValue { get; set; }
         public List<string> EnableSettings { get; set; }
 
         public void ChangeMailAddressEnabled()

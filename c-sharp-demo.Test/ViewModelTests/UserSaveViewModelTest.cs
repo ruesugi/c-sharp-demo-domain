@@ -60,7 +60,7 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.EnableSettings.Count.Is(2);
             viewModel.EnableSettings[0].Is("有効");
             viewModel.EnableSettings[1].Is("無効");
-            viewModel.EnableComboBocSelectedValue.Is(0);
+            viewModel.EnableComboBoxSelectedValue.Is(0);
         }
     }
 }
