@@ -38,6 +38,7 @@ namespace c_sharp_demo.WinForm
             this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.NoteLabel = new System.Windows.Forms.Label();
+            this.EnableComboBox = new System.Windows.Forms.ComboBox();
             this.PricePlanGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +130,21 @@ namespace c_sharp_demo.WinForm
             this.NoteLabel.TabIndex = 6;
             this.NoteLabel.Text = "無制限で使えます";
             // 
+            // EnableComboBox
+            // 
+            this.EnableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EnableComboBox.FormattingEnabled = true;
+            this.EnableComboBox.Location = new System.Drawing.Point(17, 203);
+            this.EnableComboBox.Name = "EnableComboBox";
+            this.EnableComboBox.Size = new System.Drawing.Size(121, 20);
+            this.EnableComboBox.TabIndex = 7;
+            // 
             // UserSaveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
+            this.Controls.Add(this.EnableComboBox);
             this.Controls.Add(this.NoteLabel);
             this.Controls.Add(this.PricePlanGroupBox);
             this.Controls.Add(this.MailAddressTextBox);
@@ -161,6 +172,7 @@ namespace c_sharp_demo.WinForm
         private c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton BusinessRadioButton;
         private c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton FreeRadioButton;
         private System.Windows.Forms.Label NoteLabel;
+        private System.Windows.Forms.ComboBox EnableComboBox;
     }
 }
 
