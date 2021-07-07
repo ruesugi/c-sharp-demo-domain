@@ -52,7 +52,15 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             }
         }
 
-        public object NoteLabelVisible { get; set; }
+        private bool _noteLabelVisible = false;
+        public bool NoteLabelVisible 
+        {
+            get { return _noteLabelVisible; }
+            set 
+            {
+                SetProperty(ref _noteLabelVisible, value);
+            }
+        }
 
         public void ChangeMailAddressEnabled()
         {
@@ -62,7 +70,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 
         public void ChangeNoteLabelVisible()
         {
-            throw new NotImplementedException();
+            NoteLabelVisible = BusinessRadioButtonChecked;
         }
     }
 }
