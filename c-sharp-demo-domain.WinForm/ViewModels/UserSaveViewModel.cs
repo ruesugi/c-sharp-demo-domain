@@ -1,4 +1,6 @@
-﻿namespace c_sharp_demo_domain.WinForm.ViewModels
+﻿using System;
+
+namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel : ViewModelBase
     {
@@ -50,10 +52,17 @@
             }
         }
 
+        public object NoteLabelVisible { get; set; }
+
         public void ChangeMailAddressEnabled()
         {
             MailAddressLabelEnabled = MailCheckBoxChecked;
             MailAddressTextBoxEnabled = MailCheckBoxChecked;
+        }
+
+        public void ChangeNoteLabelVisible()
+        {
+            throw new NotImplementedException();
         }
     }
 }
