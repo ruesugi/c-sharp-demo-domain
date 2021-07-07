@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
@@ -61,6 +62,9 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 SetProperty(ref _noteLabelVisible, value);
             }
         }
+
+        public object EnableComboBocSelectedValue { get; set; }
+        public List<string> EnableSettings { get; set; }
 
         public void ChangeMailAddressEnabled()
         {

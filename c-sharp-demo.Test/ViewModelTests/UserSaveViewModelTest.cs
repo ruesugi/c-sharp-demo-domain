@@ -51,5 +51,16 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.ChangeNoteLabelVisible();
             viewModel.NoteLabelVisible.Is(false);
         }
+
+        [TestMethod]
+        public void 起動時にComboBoxに有効と無効がされていることのテスト()
+        {
+            var viewModel = new UserSaveViewModel();
+
+            viewModel.EnableSettings.Count.Is(2);
+            viewModel.EnableSettings[0].Is("有効");
+            viewModel.EnableSettings[1].Is("無効");
+            viewModel.EnableComboBocSelectedValue.Is(0);
+        }
     }
 }
