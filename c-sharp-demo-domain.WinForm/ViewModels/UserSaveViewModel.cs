@@ -8,11 +8,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
     {
         public UserSaveViewModel()
         {
-            foreach (var enable in EnableSetting.ToList())
-            {
-                EnableSettings.Add(new EnableEntity(enable.Value, enable.DisplayValue));
-            }
-            EnableComboBoxSelectedValue = EnableSettings[0].EnableId;
+            InitializeEnableComboBox();
         }
 
         private bool _mailCheckBoxChecked = false;
@@ -26,6 +22,11 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         }
         public bool MailAddressLabelEnabled { get; set; }
         public bool MailAddressTextBoxEnabled { get; set; }
+        public void ChangeMailAddressEnabled()
+        {
+            MailAddressLabelEnabled = MailCheckBoxChecked;
+            MailAddressTextBoxEnabled = MailCheckBoxChecked;
+        }
 
         private bool _freeRadioButtonChecked = false;
         public bool FreeRadioButtonChecked
@@ -44,7 +45,6 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 }
             }
         }
-
         private bool _businnesRadioButtonChecked = false;
         public bool BusinessRadioButtonChecked
         {
@@ -62,7 +62,6 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 }
             }
         }
-
         private bool _noteLabelVisible = false;
         public bool NoteLabelVisible
         {
@@ -72,20 +71,26 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 SetProperty(ref _noteLabelVisible, value);
             }
         }
+        public void ChangeNoteLabelVisible()
+        {
+            NoteLabelVisible = BusinessRadioButtonChecked;
+        }
 
         public object EnableComboBoxSelectedValue { get; set; }
         public BindingList<EnableEntity> EnableSettings { get; set; }
         = new BindingList<EnableEntity>();
 
-        public void ChangeMailAddressEnabled()
+        /// <summary>
+        /// 有効/無効 を選択するComboBoxのItemを初期化する.
+        /// </summary>
+        private void InitializeEnableComboBox()
         {
-            MailAddressLabelEnabled = MailCheckBoxChecked;
-            MailAddressTextBoxEnabled = MailCheckBoxChecked;
-        }
-
-        public void ChangeNoteLabelVisible()
-        {
-            NoteLabelVisible = BusinessRadioButtonChecked;
+            EnableSettings.Clear();
+            foreach (var enable in EnableSetting.ToList())
+            {
+                EnableSettings.Add(new EnableEntity(enable.Value, enable.DisplayValue));
+            }
+            EnableComboBoxSelectedValue = EnableSettings[0].EnableId;
         }
     }
 }
