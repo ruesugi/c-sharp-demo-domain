@@ -1,5 +1,7 @@
-﻿using System;
+﻿using c_sharp_demo.Domain.Entities;
+using System.Linq;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
@@ -64,7 +66,8 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         }
 
         public object EnableComboBoxSelectedValue { get; set; }
-        public List<string> EnableSettings { get; set; }
+        public BindingList<EnableEntity> EnableSettings { get; set; }
+        = new BindingList<EnableEntity>();
 
         public void ChangeMailAddressEnabled()
         {
