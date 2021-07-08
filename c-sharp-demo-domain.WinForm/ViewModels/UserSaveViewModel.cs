@@ -1,10 +1,26 @@
-﻿using System;
+﻿using c_sharp_demo.Domain.Entities;
+using c_sharp_demo.Domain.ValueObjects;
+using System.Linq;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel : ViewModelBase
     {
+        public UserSaveViewModel()
+        {
+            foreach (
+                var enable in EnableSetting
+                              .ToList()
+                              .Select((value, index) => new { value, index }))
+            {
+                EnableSettings.Add(new EnableEntity(enable.index, enable.value));
+            }
+            EnableComboBoxSelectedValue = 0;
+        }
+
         private bool _mailCheckBoxChecked = false;
         public bool MailCheckBoxChecked
         {
@@ -54,17 +70,18 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         }
 
         private bool _noteLabelVisible = false;
-        public bool NoteLabelVisible 
+        public bool NoteLabelVisible
         {
             get { return _noteLabelVisible; }
-            set 
+            set
             {
                 SetProperty(ref _noteLabelVisible, value);
             }
         }
 
         public object EnableComboBoxSelectedValue { get; set; }
-        public List<string> EnableSettings { get; set; }
+        public BindingList<EnableEntity> EnableSettings { get; set; }
+            = new BindingList<EnableEntity>();
 
         public void ChangeMailAddressEnabled()
         {
