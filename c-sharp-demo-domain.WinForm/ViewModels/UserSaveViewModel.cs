@@ -1,7 +1,5 @@
 ﻿using c_sharp_demo.Domain.Entities;
 using c_sharp_demo.Domain.ValueObects;
-using System.Linq;
-using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
@@ -10,11 +8,11 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
     {
         public UserSaveViewModel()
         {
-            foreach (var enable in EnableSetting.ToList().Select((value, index) => new { value, index}))
+            foreach (var enable in EnableSetting.ToList())
             {
-                EnableSettings.Add(new EnableEntity(enable.index, enable.value.DisplayValue));
+                EnableSettings.Add(new EnableEntity(enable.Value, enable.DisplayValue));
             }
-            EnableComboBoxSelectedValue = 0;
+            EnableComboBoxSelectedValue = EnableSettings[0].EnableId;
         }
 
         private bool _mailCheckBoxChecked = false;
@@ -66,10 +64,10 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         }
 
         private bool _noteLabelVisible = false;
-        public bool NoteLabelVisible 
+        public bool NoteLabelVisible
         {
             get { return _noteLabelVisible; }
-            set 
+            set
             {
                 SetProperty(ref _noteLabelVisible, value);
             }
