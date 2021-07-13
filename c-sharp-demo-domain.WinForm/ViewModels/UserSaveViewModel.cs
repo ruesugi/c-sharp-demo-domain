@@ -8,7 +8,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
     {
         public UserSaveViewModel()
         {
-            InitializeEnableComboBox();
+            EnableComboBoxSelectedValue = EnableSetting.Enable.Value;
         }
 
         private bool _mailCheckBoxChecked = false;
@@ -77,20 +77,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         }
 
         public object EnableComboBoxSelectedValue { get; set; }
-        public BindingList<EnableEntity> EnableSettings { get; set; }
-        = new BindingList<EnableEntity>();
-
-        /// <summary>
-        /// 有効/無効 を選択するComboBoxのItemを初期化する.
-        /// </summary>
-        private void InitializeEnableComboBox()
-        {
-            EnableSettings.Clear();
-            foreach (var enable in EnableSetting.ToList())
-            {
-                EnableSettings.Add(new EnableEntity(enable.Value, enable.DisplayValue));
-            }
-            EnableComboBoxSelectedValue = EnableSettings[0].EnableId;
-        }
+        public BindingList<EnableSetting> EnableSettings { get; set; }
+        = new BindingList<EnableSetting>(EnableSetting.ToList());
     }
 }
