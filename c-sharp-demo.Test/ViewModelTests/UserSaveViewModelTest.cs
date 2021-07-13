@@ -90,6 +90,24 @@ namespace c_sharp_demo.Test.ViewModelTests
                 });
 
             viewModel.Save();
+
+            viewModel.IdTextBoxText = "456";
+            viewModel.MailCheckBoxChecked = true;
+            viewModel.MailAddressTextBoxText = "user2@test.com";
+            viewModel.BusinessRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 1;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(456);
+                    saveValue.IsSending.Is(true);
+                    saveValue.MailAddress.Is("user2@test.com");
+                    saveValue.PricePlan.Value.Is(1);
+                    saveValue.EnableSetting.Value.Is(1);
+                });
+
+            viewModel.Save();
             userMock.VerifyAll();
         }
     }
