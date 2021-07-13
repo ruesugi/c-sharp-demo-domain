@@ -1,5 +1,6 @@
 ﻿using c_sharp_demo.Domain.Repositories;
 using c_sharp_demo.Domain.ValueObects;
+using c_sharp_demo.Domain.Entities;
 using c_sharp_demo.Infrastructure.Csv;
 using System;
 using System.ComponentModel;
@@ -93,7 +94,13 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 
         public void Save()
         {
-            throw new NotImplementedException();
+            var entity = new UserEntity(
+                123,
+                true,
+                "user1@test.com",
+                0,
+                0);
+            _user.Save(entity);
         }
     }
 }
