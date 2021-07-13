@@ -36,7 +36,7 @@ namespace c_sharp_demo.Test.ViewModelTests
         {
             var viewModel = new UserSaveViewModel();
 
-            viewModel.FreeRadioButtonChecked.Is(false);
+            viewModel.FreeRadioButtonChecked.Is(true);
             viewModel.BusinessRadioButtonChecked.Is(false);
             viewModel.NoteLabelVisible.Is(false);
 
