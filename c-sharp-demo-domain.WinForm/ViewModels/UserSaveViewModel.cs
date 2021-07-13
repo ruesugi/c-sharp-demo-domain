@@ -116,7 +116,10 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 Convert.ToInt32(IdTextBoxText),
                 true,
                 MailAddressTextBoxText,
-                FreeRadioButtonChecked ? 0 : 1,
+                PricePlan.GetPricePlan(
+                    FreeRadioButtonChecked,
+                    BusinessRadioButtonChecked)
+                .Value,
                 Convert.ToInt32(EnableComboBoxSelectedValue));
             _user.Save(entity);
         }
