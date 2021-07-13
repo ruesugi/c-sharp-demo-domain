@@ -16,6 +16,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public UserSaveViewModel(IUserRepository user)
         {
             this._user = user;
+            FreeRadioButtonChecked = true;
             EnableComboBoxSelectedValue = EnableSetting.Enable.Value;
         }
 
@@ -95,11 +96,11 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public void Save()
         {
             var entity = new UserEntity(
-                123,
+                Convert.ToInt32(IdTextBoxText),
                 true,
-                "user1@test.com",
-                0,
-                0);
+                MailAddressTextBoxText,
+                FreeRadioButtonChecked ? 0 : 1,
+                Convert.ToInt32(EnableComboBoxSelectedValue));
             _user.Save(entity);
         }
     }
