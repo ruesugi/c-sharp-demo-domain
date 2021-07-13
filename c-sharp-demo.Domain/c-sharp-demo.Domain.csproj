@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\EnableEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueObects\EnableSetting.cs" />
     <Compile Include="ValueObects\ValueObject.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entities\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

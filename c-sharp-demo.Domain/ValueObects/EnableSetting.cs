@@ -16,7 +16,7 @@ namespace c_sharp_demo.Domain.ValueObects
             Value = value;
         }
 
-        public int Value;
+        public int Value { get; }
 
         public string DisplayValue
         {

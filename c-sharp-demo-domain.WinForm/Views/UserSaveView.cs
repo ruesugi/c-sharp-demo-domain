@@ -1,4 +1,4 @@
-﻿using c_sharp_demo.Domain.Entities;
+﻿using c_sharp_demo.Domain.ValueObects;
 using c_sharp_demo_domain.WinForm.ViewModels;
 using System.Windows.Forms;
 
@@ -42,6 +42,8 @@ namespace c_sharp_demo.WinForm
                 "Visible",
                 _viewModel,
                 nameof(_viewModel.NoteLabelVisible));
+            EnableComboBox.ValueMember = nameof(EnableSetting.Value);
+            EnableComboBox.DisplayMember = nameof(EnableSetting.DisplayValue);
             EnableComboBox.DataBindings.Add(
                 "SelectedValue",
                 _viewModel,
@@ -50,8 +52,6 @@ namespace c_sharp_demo.WinForm
                 "DataSource",
                 _viewModel,
                 nameof(_viewModel.EnableSettings));
-            EnableComboBox.ValueMember = nameof(EnableEntity.EnableId);
-            EnableComboBox.DisplayMember = nameof(EnableEntity.EnableSetting);
         }
 
         private void MailCheckBox_CheckedChanged(object sender, System.EventArgs e)
