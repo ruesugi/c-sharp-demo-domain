@@ -1,12 +1,20 @@
-﻿using c_sharp_demo.Domain.ValueObects;
+﻿using c_sharp_demo.Domain.Repositories;
+using c_sharp_demo.Domain.ValueObects;
+using c_sharp_demo.Infrastructure.Csv;
+using System;
 using System.ComponentModel;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel : ViewModelBase
     {
-        public UserSaveViewModel()
+        private IUserRepository _user;
+        public UserSaveViewModel() : this(new UserCsv())
         {
+        }
+        public UserSaveViewModel(IUserRepository user)
+        {
+            this._user = user;
             EnableComboBoxSelectedValue = EnableSetting.Enable.Value;
         }
 
@@ -62,6 +70,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             }
         }
         private bool _noteLabelVisible = false;
+
         public bool NoteLabelVisible
         {
             get { return _noteLabelVisible; }
@@ -78,5 +87,13 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public object EnableComboBoxSelectedValue { get; set; }
         public BindingList<EnableSetting> EnableSettings { get; set; }
         = new BindingList<EnableSetting>(EnableSetting.ToList());
+
+        public string IdTextBoxText { get; set; }
+        public string MailAddressTextBoxText { get; set; }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
