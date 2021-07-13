@@ -1,5 +1,4 @@
-﻿using c_sharp_demo.Domain.Entities;
-using c_sharp_demo.Domain.ValueObects;
+﻿using c_sharp_demo.Domain.ValueObects;
 using c_sharp_demo_domain.WinForm.ViewModels;
 using System.Windows.Forms;
 
