@@ -20,6 +20,26 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             EnableComboBoxSelectedValue = EnableSetting.Enable.Value;
         }
 
+        private string _idTextBoxText = "";
+        public string IdTextBoxText
+        {
+            get { return _idTextBoxText; }
+            set
+            {
+                SetProperty(ref _idTextBoxText, value);
+            }
+        }
+
+        private string _mailAddressTextBoxText = "";
+        public string MailAddressTextBoxText
+        {
+            get { return _mailAddressTextBoxText; }
+            set
+            {
+                SetProperty(ref _mailAddressTextBoxText, value);
+            }
+        }
+
         private bool _mailCheckBoxChecked = false;
         public bool MailCheckBoxChecked
         {
@@ -89,9 +109,6 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public object EnableComboBoxSelectedValue { get; set; }
         public BindingList<EnableSetting> EnableSettings { get; set; }
         = new BindingList<EnableSetting>(EnableSetting.ToList());
-
-        public string IdTextBoxText { get; set; }
-        public string MailAddressTextBoxText { get; set; }
 
         public void Save()
         {

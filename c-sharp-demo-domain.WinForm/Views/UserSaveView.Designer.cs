@@ -160,6 +160,7 @@ namespace c_sharp_demo.WinForm
             this.SaveButton.TabIndex = 0;
             this.SaveButton.Text = "保存";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // UserSaveView
             // 
