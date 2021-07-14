@@ -110,5 +110,49 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.Save();
             userMock.VerifyAll();
         }
+
+        [TestMethod]
+        public void メールを送信するのチェックがないときの保存処理のテスト()
+        {
+            var userMock = new Mock<IUserRepository>();
+
+            var viewModel = new UserSaveViewModel(userMock.Object);
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = false;
+            viewModel.MailAddressTextBoxText = "user1@test.com";
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 0;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(123);
+                    saveValue.IsSending.Is(false);
+                    saveValue.MailAddress.Is("");
+                    saveValue.PricePlan.Value.Is(0);
+                    saveValue.EnableSetting.Value.Is(0);
+                });
+
+            viewModel.Save();
+
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = true;
+            viewModel.MailAddressTextBoxText = "user1@test.com";
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 0;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(123);
+                    saveValue.IsSending.Is(true);
+                    saveValue.MailAddress.Is("user1@test.com");
+                    saveValue.PricePlan.Value.Is(0);
+                    saveValue.EnableSetting.Value.Is(0);
+                });
+
+            viewModel.Save();
+            userMock.VerifyAll();
+        }
     }
 }

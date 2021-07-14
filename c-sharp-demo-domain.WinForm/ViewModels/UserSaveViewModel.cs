@@ -114,7 +114,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         {
             var entity = new UserEntity(
                 Convert.ToInt32(IdTextBoxText),
-                true,
+                MailCheckBoxChecked,
                 MailAddressTextBoxText,
                 PricePlan.GetPricePlan(
                     FreeRadioButtonChecked,
