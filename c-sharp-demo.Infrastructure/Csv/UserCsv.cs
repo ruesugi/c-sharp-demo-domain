@@ -12,7 +12,15 @@ namespace c_sharp_demo.Infrastructure.Csv
     {
         public void Save(UserEntity userEntity)
         {
-            throw new NotImplementedException();
+            using(var sw = new System.IO.StreamWriter("user_data.csv", true, Encoding.UTF8))
+            {
+                sw.Write(userEntity.Id.ToString() + ",");
+                sw.Write(userEntity.IsSending + ",");
+                sw.Write(userEntity.MailAddress + ",");
+                sw.Write(userEntity.PricePlan.Value + ",");
+                sw.Write(userEntity.EnableSetting.Value);
+                sw.WriteLine();
+            }
         }
     }
 }
