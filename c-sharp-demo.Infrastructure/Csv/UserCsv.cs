@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace c_sharp_demo.Infrastructure.Csv
 {
-    public class UserCsv : IUserRepository
+    internal class UserCsv : IUserRepository
     {
         public void Save(UserEntity userEntity)
         {

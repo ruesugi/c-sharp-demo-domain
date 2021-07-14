@@ -1,16 +1,16 @@
 ﻿using c_sharp_demo.Domain.Repositories;
 using c_sharp_demo.Domain.ValueObects;
 using c_sharp_demo.Domain.Entities;
-using c_sharp_demo.Infrastructure.Csv;
 using System;
 using System.ComponentModel;
+using c_sharp_demo.Infrastructure;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel : ViewModelBase
     {
         private IUserRepository _user;
-        public UserSaveViewModel() : this(new UserCsv())
+        public UserSaveViewModel() : this(Factories.CreateUser())
         {
         }
         public UserSaveViewModel(IUserRepository user)
