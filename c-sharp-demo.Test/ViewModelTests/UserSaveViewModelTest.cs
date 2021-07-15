@@ -163,6 +163,10 @@ namespace c_sharp_demo.Test.ViewModelTests
 
             var ex = AssertEx.Throws<InputException>(() => viewModel.Save());
             ex.Message.Is("IDは半角数字を入力してください");
+
+            viewModel.IdTextBoxText = "abc";
+            ex = AssertEx.Throws<InputException>(() => viewModel.Save());
+            ex.Message.Is("IDは半角数字を入力してください");
         }
     }
 }
