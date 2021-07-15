@@ -1,5 +1,8 @@
-﻿using c_sharp_demo_domain.WinForm.ViewModels;
+﻿using c_sharp_demo.Domain.Entities;
+using c_sharp_demo.Domain.Repositories;
+using c_sharp_demo_domain.WinForm.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace c_sharp_demo.Test.ViewModelTests
 {
@@ -33,7 +36,7 @@ namespace c_sharp_demo.Test.ViewModelTests
         {
             var viewModel = new UserSaveViewModel();
 
-            viewModel.FreeRadioButtonChecked.Is(false);
+            viewModel.FreeRadioButtonChecked.Is(true);
             viewModel.BusinessRadioButtonChecked.Is(false);
             viewModel.NoteLabelVisible.Is(false);
 
@@ -61,6 +64,95 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.EnableSettings[0].DisplayValue.Is("有効");
             viewModel.EnableSettings[1].DisplayValue.Is("無効");
             viewModel.EnableComboBoxSelectedValue.Is(0);
+        }
+
+        [TestMethod]
+        public void 保存ボタンが押されたときに入力データが保存されることのテスト()
+        {
+            var userMock = new Mock<IUserRepository>();
+
+            var viewModel = new UserSaveViewModel(userMock.Object);
+
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = true;
+            viewModel.MailAddressTextBoxText = "user1@test.com";
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 0;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(123);
+                    saveValue.IsSending.Is(true);
+                    saveValue.MailAddress.Is("user1@test.com");
+                    saveValue.PricePlan.Value.Is(0);
+                    saveValue.EnableSetting.Value.Is(0);
+                });
+
+            viewModel.Save();
+
+            viewModel.IdTextBoxText = "456";
+            viewModel.MailCheckBoxChecked = true;
+            viewModel.MailAddressTextBoxText = "user2@test.com";
+            viewModel.BusinessRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 1;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(456);
+                    saveValue.IsSending.Is(true);
+                    saveValue.MailAddress.Is("user2@test.com");
+                    saveValue.PricePlan.Value.Is(1);
+                    saveValue.EnableSetting.Value.Is(1);
+                });
+
+            viewModel.Save();
+            userMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void メールを送信するのチェックがないときの保存処理のテスト()
+        {
+            var userMock = new Mock<IUserRepository>();
+
+            var viewModel = new UserSaveViewModel(userMock.Object);
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = false;
+            viewModel.MailAddressTextBoxText = "user1@test.com";
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 0;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(123);
+                    saveValue.IsSending.Is(false);
+                    saveValue.MailAddress.Is("");
+                    saveValue.PricePlan.Value.Is(0);
+                    saveValue.EnableSetting.Value.Is(0);
+                });
+
+            viewModel.Save();
+
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = true;
+            viewModel.MailAddressTextBoxText = "user1@test.com";
+            viewModel.FreeRadioButtonChecked = true;
+            viewModel.EnableComboBoxSelectedValue = 0;
+
+            userMock.Setup(x => x.Save(It.IsAny<UserEntity>()))
+                .Callback<UserEntity>(saveValue =>
+                {
+                    saveValue.Id.Is(123);
+                    saveValue.IsSending.Is(true);
+                    saveValue.MailAddress.Is("user1@test.com");
+                    saveValue.PricePlan.Value.Is(0);
+                    saveValue.EnableSetting.Value.Is(0);
+                });
+
+            viewModel.Save();
+            userMock.VerifyAll();
         }
     }
 }

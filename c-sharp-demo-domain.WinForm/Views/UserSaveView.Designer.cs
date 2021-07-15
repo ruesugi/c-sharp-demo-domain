@@ -39,7 +39,10 @@ namespace c_sharp_demo.WinForm
             this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.NoteLabel = new System.Windows.Forms.Label();
             this.EnableComboBox = new System.Windows.Forms.ComboBox();
+            this.ActionButtonsPanel = new System.Windows.Forms.Panel();
+            this.SaveButton = new System.Windows.Forms.Button();
             this.PricePlanGroupBox.SuspendLayout();
+            this.ActionButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // IDLabel
@@ -139,11 +142,32 @@ namespace c_sharp_demo.WinForm
             this.EnableComboBox.Size = new System.Drawing.Size(121, 20);
             this.EnableComboBox.TabIndex = 7;
             // 
+            // ActionButtonsPanel
+            // 
+            this.ActionButtonsPanel.Controls.Add(this.SaveButton);
+            this.ActionButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ActionButtonsPanel.Location = new System.Drawing.Point(0, 252);
+            this.ActionButtonsPanel.Name = "ActionButtonsPanel";
+            this.ActionButtonsPanel.Size = new System.Drawing.Size(284, 59);
+            this.ActionButtonsPanel.TabIndex = 8;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveButton.Location = new System.Drawing.Point(0, 0);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 59);
+            this.SaveButton.TabIndex = 0;
+            this.SaveButton.Text = "保存";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // UserSaveView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 311);
+            this.Controls.Add(this.ActionButtonsPanel);
             this.Controls.Add(this.EnableComboBox);
             this.Controls.Add(this.NoteLabel);
             this.Controls.Add(this.PricePlanGroupBox);
@@ -156,6 +180,7 @@ namespace c_sharp_demo.WinForm
             this.Text = "ユーザー登録";
             this.PricePlanGroupBox.ResumeLayout(false);
             this.PricePlanGroupBox.PerformLayout();
+            this.ActionButtonsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +198,8 @@ namespace c_sharp_demo.WinForm
         private c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton FreeRadioButton;
         private System.Windows.Forms.Label NoteLabel;
         private System.Windows.Forms.ComboBox EnableComboBox;
+        private System.Windows.Forms.Panel ActionButtonsPanel;
+        private System.Windows.Forms.Button SaveButton;
     }
 }
 

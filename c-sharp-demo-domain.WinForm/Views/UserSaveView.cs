@@ -12,6 +12,10 @@ namespace c_sharp_demo.WinForm
         {
             InitializeComponent();
 
+            IDTextBox.DataBindings.Add(
+                "Text",
+                _viewModel,
+                nameof(_viewModel.IdTextBoxText));
             MailCheckBox.DataBindings.Add(
                 "Checked",
                 _viewModel,
@@ -26,6 +30,10 @@ namespace c_sharp_demo.WinForm
                 "Enabled",
                 _viewModel,
                 nameof(_viewModel.MailAddressTextBoxEnabled));
+            MailAddressTextBox.DataBindings.Add(
+                "Text",
+                _viewModel,
+                nameof(_viewModel.MailAddressTextBoxText));
             FreeRadioButton.DataBindings.Add(
                 "Checked",
                 _viewModel,
@@ -64,6 +72,11 @@ namespace c_sharp_demo.WinForm
         {
             BusinessRadioButton.DataBindings[0].WriteValue();
             _viewModel.ChangeNoteLabelVisible();
+        }
+
+        private void SaveButton_Click(object sender, System.EventArgs e)
+        {
+            _viewModel.Save();
         }
     }
 }

@@ -1,13 +1,43 @@
-﻿using c_sharp_demo.Domain.ValueObects;
+﻿using c_sharp_demo.Domain.Repositories;
+using c_sharp_demo.Domain.ValueObects;
+using c_sharp_demo.Domain.Entities;
+using System;
 using System.ComponentModel;
+using c_sharp_demo.Infrastructure;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserSaveViewModel : ViewModelBase
     {
-        public UserSaveViewModel()
+        private IUserRepository _user;
+        public UserSaveViewModel() : this(Factories.CreateUser())
         {
+        }
+        public UserSaveViewModel(IUserRepository user)
+        {
+            this._user = user;
+            FreeRadioButtonChecked = true;
             EnableComboBoxSelectedValue = EnableSetting.Enable.Value;
+        }
+
+        private string _idTextBoxText = "";
+        public string IdTextBoxText
+        {
+            get { return _idTextBoxText; }
+            set
+            {
+                SetProperty(ref _idTextBoxText, value);
+            }
+        }
+
+        private string _mailAddressTextBoxText = "";
+        public string MailAddressTextBoxText
+        {
+            get { return _mailAddressTextBoxText; }
+            set
+            {
+                SetProperty(ref _mailAddressTextBoxText, value);
+            }
         }
 
         private bool _mailCheckBoxChecked = false;
@@ -62,6 +92,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             }
         }
         private bool _noteLabelVisible = false;
+
         public bool NoteLabelVisible
         {
             get { return _noteLabelVisible; }
@@ -78,5 +109,19 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public object EnableComboBoxSelectedValue { get; set; }
         public BindingList<EnableSetting> EnableSettings { get; set; }
         = new BindingList<EnableSetting>(EnableSetting.ToList());
+
+        public void Save()
+        {
+            var entity = new UserEntity(
+                Convert.ToInt32(IdTextBoxText),
+                MailCheckBoxChecked,
+                MailAddressTextBoxText,
+                PricePlan.GetPricePlan(
+                    FreeRadioButtonChecked,
+                    BusinessRadioButtonChecked)
+                .Value,
+                Convert.ToInt32(EnableComboBoxSelectedValue));
+            _user.Save(entity);
+        }
     }
 }
