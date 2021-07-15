@@ -25,7 +25,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             }
         }
 
-        public BindingList<UserListViewModelDisplayUser> Users =
+        public BindingList<UserListViewModelDisplayUser> Users { get; set; } =
             new BindingList<UserListViewModelDisplayUser>();
     }
 }
