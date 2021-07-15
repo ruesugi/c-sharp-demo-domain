@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using c_sharp_demo_domain.WinForm.Views;
+using System;
 using System.Windows.Forms;
 
 namespace c_sharp_demo.WinForm
@@ -16,7 +14,7 @@ namespace c_sharp_demo.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserSaveView());
+            Application.Run(new MenuView());
         }
     }
 }
