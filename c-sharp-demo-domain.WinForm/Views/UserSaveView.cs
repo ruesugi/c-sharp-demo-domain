@@ -81,7 +81,14 @@ namespace c_sharp_demo.WinForm
                                          MessageBoxButtons.YesNo,
                                          MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
+            {
                 _viewModel.Save();
+                StatusText.Text = "保存しました";
+            }
+            else
+            {
+                StatusText.Text = "キャンセルしました";
+            }
         }
     }
 }
