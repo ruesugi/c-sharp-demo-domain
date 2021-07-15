@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel;
 using c_sharp_demo.Infrastructure;
 using c_sharp_demo.Domain.Helpers;
+using c_sharp_demo.Domain.Exceptions;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
@@ -114,6 +115,11 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public void Save()
         {
             Guard.IsNumber(IdTextBoxText, "IDは半角数字を入力してください");
+            if (MailCheckBoxChecked)
+            {
+                if (MailAddressTextBoxText.Length == 0)
+                    throw new InputException("メールアドレスを正しく入力してください");
+            }
 
             var entity = new UserEntity(
                 Convert.ToInt32(IdTextBoxText),
