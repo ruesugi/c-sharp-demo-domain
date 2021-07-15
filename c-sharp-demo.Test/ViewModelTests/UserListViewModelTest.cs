@@ -38,16 +38,16 @@ namespace c_sharp_demo.Test.ViewModelTests
             var viewModel = new UserListViewModel(userMock.Object);
 
             viewModel.Users.Count.Is(2);
-            viewModel.Users[0].Id.Is(123);
-            viewModel.Users[0].IsSending.Is(true);
+            viewModel.Users[0].Id.Is(123.ToString());
+            viewModel.Users[0].IsSending.Is(true.ToString());
             viewModel.Users[0].MailAddress.Is("user1@test.com");
-            viewModel.Users[0].PricePlan.DisplayValue.Is("無料");
-            viewModel.Users[0].EnableSetting.DisplayValue.Is("有効");
-            viewModel.Users[1].Id.Is(456);
-            viewModel.Users[1].IsSending.Is(false);
+            viewModel.Users[0].PricePlan.Is("無料");
+            viewModel.Users[0].EnableSetting.Is("有効");
+            viewModel.Users[1].Id.Is(456.ToString());
+            viewModel.Users[1].IsSending.Is(false.ToString());
             viewModel.Users[1].MailAddress.Is("");
-            viewModel.Users[1].PricePlan.DisplayValue.Is("ビジネス");
-            viewModel.Users[1].EnableSetting.DisplayValue.Is("無効");
+            viewModel.Users[1].PricePlan.Is("ビジネス");
+            viewModel.Users[1].EnableSetting.Is("無効");
         }
     }
 }

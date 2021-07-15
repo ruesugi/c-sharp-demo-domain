@@ -12,8 +12,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 {
     public class UserListViewModel : ViewModelBase
     {
-        private IUserRepository _user;
-
+        private readonly IUserRepository _user;
         public UserListViewModel() : this(Factories.CreateUser())
         {
         }
@@ -22,7 +21,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             _user = user;
         }
 
-        public BindingList<UserEntity> Users =
-            new BindingList<UserEntity>();
+        public BindingList<UserListViewModelDisplayUser> Users =
+            new BindingList<UserListViewModelDisplayUser>();
     }
 }
