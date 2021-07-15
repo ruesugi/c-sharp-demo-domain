@@ -119,6 +119,8 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
             {
                 if (MailAddressTextBoxText.Length == 0)
                     throw new InputException("メールアドレスを正しく入力してください");
+                if (!MailAddressTextBoxText.Contains("@"))
+                    throw new InputException("メールアドレスを正しく入力してください");
             }
 
             var entity = new UserEntity(
