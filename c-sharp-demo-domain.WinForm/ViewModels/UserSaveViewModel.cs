@@ -119,6 +119,11 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
                 throw new InputException("IDは半角数字を入力してください");
             }
 
+            if (!IdTextBoxText.All(char.IsDigit))
+            {
+                throw new InputException("IDは半角数字を入力してください");
+            }
+
             var entity = new UserEntity(
                 Convert.ToInt32(IdTextBoxText),
                 MailCheckBoxChecked,
