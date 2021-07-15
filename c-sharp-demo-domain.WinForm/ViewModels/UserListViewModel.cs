@@ -19,6 +19,10 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public UserListViewModel(IUserRepository user)
         {
             _user = user;
+            foreach(var entity in _user.GetUser())
+            {
+                Users.Add(new UserListViewModelDisplayUser(entity));
+            }
         }
 
         public BindingList<UserListViewModelDisplayUser> Users =

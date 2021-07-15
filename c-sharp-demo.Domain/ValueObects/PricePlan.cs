@@ -9,7 +9,15 @@
             Value = value;
         }
         public int Value { get; }
-        public string DisplayValue { get; set; }
+        public string DisplayValue 
+        {
+            get 
+            {
+                if (this == Free) return "無料";
+                if (this == Business) return "ビジネス";
+                return "-";
+            }
+        }
 
         public static PricePlan GetPricePlan(bool free, bool business)
         {
