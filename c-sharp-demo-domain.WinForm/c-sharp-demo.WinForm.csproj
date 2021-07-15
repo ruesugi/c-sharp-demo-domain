@@ -49,6 +49,7 @@
     <Compile Include="BindHelpers\BindableRadioButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ViewModels\UserListViewModel.cs" />
     <Compile Include="ViewModels\UserSaveViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\MenuView.cs">

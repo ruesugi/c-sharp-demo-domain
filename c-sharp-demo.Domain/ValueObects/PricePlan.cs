@@ -9,6 +9,7 @@
             Value = value;
         }
         public int Value { get; }
+        public string DisplayValue { get; set; }
 
         public static PricePlan GetPricePlan(bool free, bool business)
         {

@@ -8,6 +8,11 @@ namespace c_sharp_demo.Infrastructure.Csv
     {
         private readonly string _userDataPath = "user_data.csv";
 
+        public IReadOnlyList<UserEntity> GetUser()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Save(UserEntity userEntity)
         {
             var parameters = new List<string>
