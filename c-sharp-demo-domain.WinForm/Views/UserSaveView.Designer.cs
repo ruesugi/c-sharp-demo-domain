@@ -35,14 +35,14 @@ namespace c_sharp_demo.WinForm
             this.MailAddressLabel = new System.Windows.Forms.Label();
             this.MailAddressTextBox = new System.Windows.Forms.TextBox();
             this.PricePlanGroupBox = new System.Windows.Forms.GroupBox();
-            this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
-            this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.NoteLabel = new System.Windows.Forms.Label();
             this.EnableComboBox = new System.Windows.Forms.ComboBox();
             this.ActionButtonsPanel = new System.Windows.Forms.Panel();
             this.SaveButton = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
+            this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.PricePlanGroupBox.SuspendLayout();
             this.ActionButtonsPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -109,6 +109,64 @@ namespace c_sharp_demo.WinForm
             this.PricePlanGroupBox.TabStop = false;
             this.PricePlanGroupBox.Text = "プラン";
             // 
+            // NoteLabel
+            // 
+            this.NoteLabel.AutoSize = true;
+            this.NoteLabel.Location = new System.Drawing.Point(33, 344);
+            this.NoteLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.NoteLabel.Name = "NoteLabel";
+            this.NoteLabel.Size = new System.Drawing.Size(183, 24);
+            this.NoteLabel.TabIndex = 6;
+            this.NoteLabel.Text = "無制限で使えます";
+            // 
+            // EnableComboBox
+            // 
+            this.EnableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EnableComboBox.FormattingEnabled = true;
+            this.EnableComboBox.Location = new System.Drawing.Point(37, 406);
+            this.EnableComboBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.EnableComboBox.Name = "EnableComboBox";
+            this.EnableComboBox.Size = new System.Drawing.Size(258, 32);
+            this.EnableComboBox.TabIndex = 7;
+            // 
+            // ActionButtonsPanel
+            // 
+            this.ActionButtonsPanel.Controls.Add(this.SaveButton);
+            this.ActionButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ActionButtonsPanel.Location = new System.Drawing.Point(0, 482);
+            this.ActionButtonsPanel.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.ActionButtonsPanel.Name = "ActionButtonsPanel";
+            this.ActionButtonsPanel.Size = new System.Drawing.Size(615, 118);
+            this.ActionButtonsPanel.TabIndex = 8;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveButton.Location = new System.Drawing.Point(0, 0);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(163, 118);
+            this.SaveButton.TabIndex = 0;
+            this.SaveButton.Text = "保存";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusText});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 600);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(615, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusText
+            // 
+            this.StatusText.Name = "StatusText";
+            this.StatusText.Size = new System.Drawing.Size(0, 12);
+            // 
             // BusinessRadioButton
             // 
             this.BusinessRadioButton.AutoCheck = false;
@@ -135,64 +193,6 @@ namespace c_sharp_demo.WinForm
             this.FreeRadioButton.TabStop = true;
             this.FreeRadioButton.Text = "無料";
             this.FreeRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // NoteLabel
-            // 
-            this.NoteLabel.AutoSize = true;
-            this.NoteLabel.Location = new System.Drawing.Point(33, 344);
-            this.NoteLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(183, 24);
-            this.NoteLabel.TabIndex = 6;
-            this.NoteLabel.Text = "無制限で使えます";
-            // 
-            // EnableComboBox
-            // 
-            this.EnableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EnableComboBox.FormattingEnabled = true;
-            this.EnableComboBox.Location = new System.Drawing.Point(37, 406);
-            this.EnableComboBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.EnableComboBox.Name = "EnableComboBox";
-            this.EnableComboBox.Size = new System.Drawing.Size(258, 32);
-            this.EnableComboBox.TabIndex = 7;
-            // 
-            // ActionButtonsPanel
-            // 
-            this.ActionButtonsPanel.Controls.Add(this.SaveButton);
-            this.ActionButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionButtonsPanel.Location = new System.Drawing.Point(0, 466);
-            this.ActionButtonsPanel.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.ActionButtonsPanel.Name = "ActionButtonsPanel";
-            this.ActionButtonsPanel.Size = new System.Drawing.Size(615, 118);
-            this.ActionButtonsPanel.TabIndex = 8;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SaveButton.Location = new System.Drawing.Point(0, 0);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(163, 118);
-            this.SaveButton.TabIndex = 0;
-            this.SaveButton.Text = "保存";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 584);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(615, 38);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // StatusText
-            // 
-            this.StatusText.Name = "StatusText";
-            this.StatusText.Size = new System.Drawing.Size(0, 28);
             // 
             // UserSaveView
             // 

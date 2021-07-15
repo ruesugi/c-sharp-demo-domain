@@ -1,4 +1,5 @@
 ﻿using c_sharp_demo.Domain.Entities;
+using c_sharp_demo.Domain.Exceptions;
 using c_sharp_demo.Domain.Repositories;
 using c_sharp_demo_domain.WinForm.ViewModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -153,6 +154,15 @@ namespace c_sharp_demo.Test.ViewModelTests
 
             viewModel.Save();
             userMock.VerifyAll();
+        }
+
+        [TestMethod]
+        public void 入力欄に不正な文字が含まれていた場合に例外を発生するテスト()
+        {
+            var viewModel = new UserSaveViewModel();
+
+            var ex = AssertEx.Throws<InputException>(() => viewModel.Save());
+            ex.Message.Is("IDは半角数字を入力してください");
         }
     }
 }
