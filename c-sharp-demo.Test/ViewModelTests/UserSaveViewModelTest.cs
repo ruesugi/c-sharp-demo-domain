@@ -184,6 +184,10 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.MailAddressTextBoxText = "suzuki.example.com";
             ex = AssertEx.Throws<InputException>(() => viewModel.Save());
             ex.Message.Is("メールアドレスを正しく入力してください");
+
+            viewModel.MailAddressTextBoxText = "sato#suzuki@example.com";
+            ex = AssertEx.Throws<InputException>(() => viewModel.Save());
+            ex.Message.Is("メールアドレスを正しく入力してください");
         }
     }
 }
