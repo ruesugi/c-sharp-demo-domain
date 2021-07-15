@@ -18,5 +18,13 @@ namespace c_sharp_demo_domain.WinForm.Views
                 f.ShowDialog();
             }
         }
+
+        private void UserListViewButton_Click(object sender, EventArgs e)
+        {
+            using (var f = new UserListView())
+            {
+                f.ShowDialog();
+            }
+        }
     }
 }

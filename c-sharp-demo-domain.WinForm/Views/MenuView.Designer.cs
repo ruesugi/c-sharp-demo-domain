@@ -30,6 +30,7 @@ namespace c_sharp_demo_domain.WinForm.Views
         private void InitializeComponent()
         {
             this.UserSaveViewButton = new System.Windows.Forms.Button();
+            this.UserListViewButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserSaveViewButton
@@ -43,11 +44,23 @@ namespace c_sharp_demo_domain.WinForm.Views
             this.UserSaveViewButton.UseVisualStyleBackColor = true;
             this.UserSaveViewButton.Click += new System.EventHandler(this.UserSaveViewButton_Click);
             // 
+            // UserListViewButton
+            // 
+            this.UserListViewButton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.UserListViewButton.Location = new System.Drawing.Point(0, 40);
+            this.UserListViewButton.Name = "UserListViewButton";
+            this.UserListViewButton.Size = new System.Drawing.Size(284, 40);
+            this.UserListViewButton.TabIndex = 1;
+            this.UserListViewButton.Text = "ユーザーリスト";
+            this.UserListViewButton.UseVisualStyleBackColor = true;
+            this.UserListViewButton.Click += new System.EventHandler(this.UserListViewButton_Click);
+            // 
             // MenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.UserListViewButton);
             this.Controls.Add(this.UserSaveViewButton);
             this.Name = "MenuView";
             this.Text = "メニュー";
@@ -58,5 +71,6 @@ namespace c_sharp_demo_domain.WinForm.Views
         #endregion
 
         private System.Windows.Forms.Button UserSaveViewButton;
+        private System.Windows.Forms.Button UserListViewButton;
     }
 }
