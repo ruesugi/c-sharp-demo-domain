@@ -35,14 +35,15 @@ namespace c_sharp_demo.WinForm
             this.MailAddressLabel = new System.Windows.Forms.Label();
             this.MailAddressTextBox = new System.Windows.Forms.TextBox();
             this.PricePlanGroupBox = new System.Windows.Forms.GroupBox();
+            this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
+            this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.NoteLabel = new System.Windows.Forms.Label();
             this.EnableComboBox = new System.Windows.Forms.ComboBox();
             this.ActionButtonsPanel = new System.Windows.Forms.Panel();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.StatusText = new System.Windows.Forms.ToolStripStatusLabel();
-            this.BusinessRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
-            this.FreeRadioButton = new c_sharp_demo_domain.WinForm.BindHelpers.BindableRadioButton();
             this.PricePlanGroupBox.SuspendLayout();
             this.ActionButtonsPanel.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -51,28 +52,25 @@ namespace c_sharp_demo.WinForm
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(28, 26);
-            this.IDLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.IDLabel.Location = new System.Drawing.Point(13, 13);
             this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(32, 24);
+            this.IDLabel.Size = new System.Drawing.Size(16, 12);
             this.IDLabel.TabIndex = 0;
             this.IDLabel.Text = "ID";
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(76, 20);
-            this.IDTextBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.IDTextBox.Location = new System.Drawing.Point(35, 10);
             this.IDTextBox.Name = "IDTextBox";
-            this.IDTextBox.Size = new System.Drawing.Size(212, 31);
+            this.IDTextBox.Size = new System.Drawing.Size(100, 19);
             this.IDTextBox.TabIndex = 1;
             // 
             // MailCheckBox
             // 
             this.MailCheckBox.AutoSize = true;
-            this.MailCheckBox.Location = new System.Drawing.Point(33, 88);
-            this.MailCheckBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.MailCheckBox.Location = new System.Drawing.Point(15, 44);
             this.MailCheckBox.Name = "MailCheckBox";
-            this.MailCheckBox.Size = new System.Drawing.Size(203, 28);
+            this.MailCheckBox.Size = new System.Drawing.Size(104, 16);
             this.MailCheckBox.TabIndex = 2;
             this.MailCheckBox.Text = "メールを送信する";
             this.MailCheckBox.UseVisualStyleBackColor = true;
@@ -81,100 +79,37 @@ namespace c_sharp_demo.WinForm
             // MailAddressLabel
             // 
             this.MailAddressLabel.AutoSize = true;
-            this.MailAddressLabel.Location = new System.Drawing.Point(33, 134);
-            this.MailAddressLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.MailAddressLabel.Location = new System.Drawing.Point(15, 67);
             this.MailAddressLabel.Name = "MailAddressLabel";
-            this.MailAddressLabel.Size = new System.Drawing.Size(138, 24);
+            this.MailAddressLabel.Size = new System.Drawing.Size(69, 12);
             this.MailAddressLabel.TabIndex = 3;
             this.MailAddressLabel.Text = "メールアドレス";
             // 
             // MailAddressTextBox
             // 
-            this.MailAddressTextBox.Location = new System.Drawing.Point(195, 128);
-            this.MailAddressTextBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.MailAddressTextBox.Location = new System.Drawing.Point(90, 64);
             this.MailAddressTextBox.Name = "MailAddressTextBox";
-            this.MailAddressTextBox.Size = new System.Drawing.Size(212, 31);
+            this.MailAddressTextBox.Size = new System.Drawing.Size(100, 19);
             this.MailAddressTextBox.TabIndex = 4;
             // 
             // PricePlanGroupBox
             // 
             this.PricePlanGroupBox.Controls.Add(this.BusinessRadioButton);
             this.PricePlanGroupBox.Controls.Add(this.FreeRadioButton);
-            this.PricePlanGroupBox.Location = new System.Drawing.Point(37, 198);
-            this.PricePlanGroupBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.PricePlanGroupBox.Location = new System.Drawing.Point(17, 99);
             this.PricePlanGroupBox.Name = "PricePlanGroupBox";
-            this.PricePlanGroupBox.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.PricePlanGroupBox.Size = new System.Drawing.Size(433, 140);
+            this.PricePlanGroupBox.Size = new System.Drawing.Size(200, 70);
             this.PricePlanGroupBox.TabIndex = 5;
             this.PricePlanGroupBox.TabStop = false;
             this.PricePlanGroupBox.Text = "プラン";
-            // 
-            // NoteLabel
-            // 
-            this.NoteLabel.AutoSize = true;
-            this.NoteLabel.Location = new System.Drawing.Point(33, 344);
-            this.NoteLabel.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.NoteLabel.Name = "NoteLabel";
-            this.NoteLabel.Size = new System.Drawing.Size(183, 24);
-            this.NoteLabel.TabIndex = 6;
-            this.NoteLabel.Text = "無制限で使えます";
-            // 
-            // EnableComboBox
-            // 
-            this.EnableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EnableComboBox.FormattingEnabled = true;
-            this.EnableComboBox.Location = new System.Drawing.Point(37, 406);
-            this.EnableComboBox.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.EnableComboBox.Name = "EnableComboBox";
-            this.EnableComboBox.Size = new System.Drawing.Size(258, 32);
-            this.EnableComboBox.TabIndex = 7;
-            // 
-            // ActionButtonsPanel
-            // 
-            this.ActionButtonsPanel.Controls.Add(this.SaveButton);
-            this.ActionButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionButtonsPanel.Location = new System.Drawing.Point(0, 482);
-            this.ActionButtonsPanel.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.ActionButtonsPanel.Name = "ActionButtonsPanel";
-            this.ActionButtonsPanel.Size = new System.Drawing.Size(615, 118);
-            this.ActionButtonsPanel.TabIndex = 8;
-            // 
-            // SaveButton
-            // 
-            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
-            this.SaveButton.Location = new System.Drawing.Point(0, 0);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(163, 118);
-            this.SaveButton.TabIndex = 0;
-            this.SaveButton.Text = "保存";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusText});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 600);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(615, 22);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // StatusText
-            // 
-            this.StatusText.Name = "StatusText";
-            this.StatusText.Size = new System.Drawing.Size(0, 12);
             // 
             // BusinessRadioButton
             // 
             this.BusinessRadioButton.AutoCheck = false;
             this.BusinessRadioButton.AutoSize = true;
-            this.BusinessRadioButton.Location = new System.Drawing.Point(245, 60);
-            this.BusinessRadioButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.BusinessRadioButton.Location = new System.Drawing.Point(113, 30);
             this.BusinessRadioButton.Name = "BusinessRadioButton";
-            this.BusinessRadioButton.Size = new System.Drawing.Size(116, 28);
+            this.BusinessRadioButton.Size = new System.Drawing.Size(60, 16);
             this.BusinessRadioButton.TabIndex = 1;
             this.BusinessRadioButton.TabStop = true;
             this.BusinessRadioButton.Text = "ビジネス";
@@ -185,20 +120,87 @@ namespace c_sharp_demo.WinForm
             // 
             this.FreeRadioButton.AutoCheck = false;
             this.FreeRadioButton.AutoSize = true;
-            this.FreeRadioButton.Location = new System.Drawing.Point(39, 60);
-            this.FreeRadioButton.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.FreeRadioButton.Location = new System.Drawing.Point(18, 30);
             this.FreeRadioButton.Name = "FreeRadioButton";
-            this.FreeRadioButton.Size = new System.Drawing.Size(89, 28);
+            this.FreeRadioButton.Size = new System.Drawing.Size(47, 16);
             this.FreeRadioButton.TabIndex = 0;
             this.FreeRadioButton.TabStop = true;
             this.FreeRadioButton.Text = "無料";
             this.FreeRadioButton.UseVisualStyleBackColor = true;
             // 
+            // NoteLabel
+            // 
+            this.NoteLabel.AutoSize = true;
+            this.NoteLabel.Location = new System.Drawing.Point(15, 172);
+            this.NoteLabel.Name = "NoteLabel";
+            this.NoteLabel.Size = new System.Drawing.Size(91, 12);
+            this.NoteLabel.TabIndex = 6;
+            this.NoteLabel.Text = "無制限で使えます";
+            // 
+            // EnableComboBox
+            // 
+            this.EnableComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EnableComboBox.FormattingEnabled = true;
+            this.EnableComboBox.Location = new System.Drawing.Point(17, 203);
+            this.EnableComboBox.Name = "EnableComboBox";
+            this.EnableComboBox.Size = new System.Drawing.Size(121, 20);
+            this.EnableComboBox.TabIndex = 7;
+            // 
+            // ActionButtonsPanel
+            // 
+            this.ActionButtonsPanel.Controls.Add(this.CloseButton);
+            this.ActionButtonsPanel.Controls.Add(this.SaveButton);
+            this.ActionButtonsPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ActionButtonsPanel.Location = new System.Drawing.Point(0, 230);
+            this.ActionButtonsPanel.Name = "ActionButtonsPanel";
+            this.ActionButtonsPanel.Size = new System.Drawing.Size(284, 59);
+            this.ActionButtonsPanel.TabIndex = 8;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CloseButton.Location = new System.Drawing.Point(75, 0);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(75, 59);
+            this.CloseButton.TabIndex = 1;
+            this.CloseButton.Text = "閉じる";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Dock = System.Windows.Forms.DockStyle.Left;
+            this.SaveButton.Location = new System.Drawing.Point(0, 0);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 59);
+            this.SaveButton.TabIndex = 0;
+            this.SaveButton.Text = "保存";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.StatusText});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 289);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(284, 22);
+            this.statusStrip1.TabIndex = 9;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // StatusText
+            // 
+            this.StatusText.Name = "StatusText";
+            this.StatusText.Size = new System.Drawing.Size(0, 17);
+            // 
             // UserSaveView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 622);
+            this.ClientSize = new System.Drawing.Size(284, 311);
             this.Controls.Add(this.ActionButtonsPanel);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.EnableComboBox);
@@ -209,7 +211,6 @@ namespace c_sharp_demo.WinForm
             this.Controls.Add(this.MailCheckBox);
             this.Controls.Add(this.IDTextBox);
             this.Controls.Add(this.IDLabel);
-            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "UserSaveView";
             this.Text = "ユーザー登録";
             this.PricePlanGroupBox.ResumeLayout(false);
@@ -238,6 +239,7 @@ namespace c_sharp_demo.WinForm
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel StatusText;
+        private System.Windows.Forms.Button CloseButton;
     }
 }
 

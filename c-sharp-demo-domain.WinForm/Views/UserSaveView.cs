@@ -99,5 +99,10 @@ namespace c_sharp_demo.WinForm
             }
             
         }
+
+        private void CloseButton_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
     }
 }
