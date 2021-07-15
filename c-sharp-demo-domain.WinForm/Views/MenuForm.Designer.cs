@@ -41,6 +41,7 @@ namespace c_sharp_demo_domain.WinForm.Views
             this.UserSaveFormButton.TabIndex = 0;
             this.UserSaveFormButton.Text = "ユーザー登録";
             this.UserSaveFormButton.UseVisualStyleBackColor = true;
+            this.UserSaveFormButton.Click += new System.EventHandler(this.UserSaveFormButton_Click);
             // 
             // MenuForm
             // 

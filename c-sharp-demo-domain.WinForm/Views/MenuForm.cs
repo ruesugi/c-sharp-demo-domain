@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using c_sharp_demo.WinForm;
+using System;
 using System.Windows.Forms;
 
 namespace c_sharp_demo_domain.WinForm.Views
@@ -15,6 +9,14 @@ namespace c_sharp_demo_domain.WinForm.Views
         public MenuForm()
         {
             InitializeComponent();
+        }
+
+        private void UserSaveFormButton_Click(object sender, EventArgs e)
+        {
+            using(var f = new UserSaveView())
+            {
+                f.ShowDialog();
+            }
         }
     }
 }
