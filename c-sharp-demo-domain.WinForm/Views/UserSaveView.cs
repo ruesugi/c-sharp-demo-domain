@@ -76,7 +76,12 @@ namespace c_sharp_demo.WinForm
 
         private void SaveButton_Click(object sender, System.EventArgs e)
         {
-            _viewModel.Save();
+            var result = MessageBox.Show("保存しますか？",
+                                         "確認",
+                                         MessageBoxButtons.YesNo,
+                                         MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                _viewModel.Save();
         }
     }
 }
