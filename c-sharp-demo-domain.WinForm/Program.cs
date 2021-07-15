@@ -14,7 +14,7 @@ namespace c_sharp_demo.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuForm());
+            Application.Run(new MenuView());
         }
     }
 }

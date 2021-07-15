@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace c_sharp_demo_domain.WinForm.Views
 {
-    public partial class MenuForm : Form
+    public partial class MenuView : Form
     {
-        public MenuForm()
+        public MenuView()
         {
             InitializeComponent();
         }
 
-        private void UserSaveFormButton_Click(object sender, EventArgs e)
+        private void UserSaveViewButton_Click(object sender, EventArgs e)
         {
             using(var f = new UserSaveView())
             {
