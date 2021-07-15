@@ -12,26 +12,23 @@ namespace c_sharp_demo.Infrastructure.Csv
 
         public IReadOnlyList<UserEntity> GetUser()
         {
+            var entities = new List<UserEntity>();
             if (System.IO.File.Exists(_userDataPath))
             {
-                var entities = new List<UserEntity>();
                 var lines = System.IO.File.ReadAllLines("user_data.csv", Encoding.UTF8);
                 foreach (var line in lines)
                 {
                     var data = line.Split(',');
                     entities.Add(new UserEntity(
-                        Convert.ToInt32(data[0]), 
-                        Convert.ToBoolean(data[1]), 
-                        data[2], 
-                        Convert.ToInt32(data[3]), 
+                        Convert.ToInt32(data[0]),
+                        Convert.ToBoolean(data[1]),
+                        data[2],
+                        Convert.ToInt32(data[3]),
                         Convert.ToInt32(data[4])));
                 }
-                return entities;
             }
-            else
-            {
-                return null;
-            }
+
+            return entities;
         }
 
         public void Save(UserEntity userEntity)
