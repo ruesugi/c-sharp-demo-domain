@@ -12,9 +12,22 @@ namespace c_sharp_demo.Domain.Helpers
     {
         public static void IsNumber(string text, string message)
         {
-            if (!Regex.IsMatch(text, @"^[0-9]+$"))
+            string regex = @"^[0-9]+$";
+            if (!Regex.IsMatch(text, regex))
             {
                 throw new InputException(message);
+            }
+        }
+
+        public static void IsMailAddress(bool IsSending, string text, string message)
+        {
+            string regex = @"^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$";
+            if (IsSending)
+            {
+                if (!Regex.IsMatch(text, regex))
+                {
+                    throw new InputException(message);
+                }
             }
         }
     }

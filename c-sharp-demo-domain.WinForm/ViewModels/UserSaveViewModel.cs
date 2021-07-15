@@ -115,13 +115,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
         public void Save()
         {
             Guard.IsNumber(IdTextBoxText, "IDは半角数字を入力してください");
-            if (MailCheckBoxChecked)
-            {
-                if (MailAddressTextBoxText.Length == 0)
-                    throw new InputException("メールアドレスを正しく入力してください");
-                if (!MailAddressTextBoxText.Contains("@"))
-                    throw new InputException("メールアドレスを正しく入力してください");
-            }
+            Guard.IsMailAddress(MailCheckBoxChecked, MailAddressTextBoxText, "メールアドレスを正しく入力してください");
 
             var entity = new UserEntity(
                 Convert.ToInt32(IdTextBoxText),
