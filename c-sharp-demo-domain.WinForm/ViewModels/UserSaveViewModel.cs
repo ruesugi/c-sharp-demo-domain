@@ -4,9 +4,7 @@ using c_sharp_demo.Domain.Entities;
 using System;
 using System.ComponentModel;
 using c_sharp_demo.Infrastructure;
-using System.Linq;
-using c_sharp_demo.Domain.Exceptions;
-using System.Text.RegularExpressions;
+using c_sharp_demo.Domain.Helpers;
 
 namespace c_sharp_demo_domain.WinForm.ViewModels
 {
@@ -115,10 +113,7 @@ namespace c_sharp_demo_domain.WinForm.ViewModels
 
         public void Save()
         {
-            if (!Regex.IsMatch(IdTextBoxText, @"^[0-9]+$"))
-            {
-                throw new InputException("IDは半角数字を入力してください");
-            }
+            Guard.IsNumber(IdTextBoxText, "IDは半角数字を入力してください");
 
             var entity = new UserEntity(
                 Convert.ToInt32(IdTextBoxText),
