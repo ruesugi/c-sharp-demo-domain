@@ -1,4 +1,5 @@
-﻿using c_sharp_demo.Domain.ValueObects;
+﻿using c_sharp_demo.Domain.Exceptions;
+using c_sharp_demo.Domain.ValueObects;
 using c_sharp_demo_domain.WinForm.ViewModels;
 using System.Windows.Forms;
 
@@ -80,15 +81,23 @@ namespace c_sharp_demo.WinForm
                                          "確認",
                                          MessageBoxButtons.YesNo,
                                          MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            try
             {
-                _viewModel.Save();
-                StatusText.Text = "保存しました";
+                if (result == DialogResult.Yes)
+                {
+                    _viewModel.Save();
+                    StatusText.Text = "保存しました";
+                }
+                else
+                {
+                    StatusText.Text = "キャンセルしました";
+                }
             }
-            else
+            catch(InputException ex)
             {
-                StatusText.Text = "キャンセルしました";
+                StatusText.Text = ex.Message;
             }
+            
         }
     }
 }
