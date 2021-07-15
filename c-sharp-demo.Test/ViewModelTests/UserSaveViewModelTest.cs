@@ -175,6 +175,11 @@ namespace c_sharp_demo.Test.ViewModelTests
             viewModel.IdTextBoxText = "0,a./1@-^\\2]";
             ex = AssertEx.Throws<InputException>(() => viewModel.Save());
             ex.Message.Is("IDは半角数字を入力してください");
+
+            viewModel.IdTextBoxText = "123";
+            viewModel.MailCheckBoxChecked = true;
+            ex = AssertEx.Throws<InputException>(() => viewModel.Save());
+            ex.Message.Is("メールアドレスを正しく入力してください");
         }
     }
 }
