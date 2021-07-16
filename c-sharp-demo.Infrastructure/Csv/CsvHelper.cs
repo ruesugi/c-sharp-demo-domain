@@ -19,5 +19,12 @@ namespace c_sharp_demo.Infrastructure.Csv
                 sw.WriteLine(sb.ToString());
             }
         }
+
+        internal static string[] ReadAll(string filePath)
+        {
+            if (File.Exists(filePath)) return File.ReadAllLines(filePath, Encoding.UTF8);
+
+            return new string[0];
+        }
     }
 }
