@@ -15,7 +15,7 @@ namespace c_sharp_demo.Infrastructure.Csv
             var entities = new List<UserEntity>();
             if (System.IO.File.Exists(_userDataPath))
             {
-                var lines = System.IO.File.ReadAllLines("user_data.csv", Encoding.UTF8);
+                var lines = System.IO.File.ReadAllLines(_userDataPath, Encoding.UTF8);
                 foreach (var line in lines)
                 {
                     var data = line.Split(',');
