@@ -13,19 +13,16 @@ namespace c_sharp_demo.Infrastructure.Csv
         public IReadOnlyList<UserEntity> GetUser()
         {
             var entities = new List<UserEntity>();
-            if (System.IO.File.Exists(_userDataPath))
+
+            foreach (var line in CsvHelper.ReadAll(_userDataPath))
             {
-                var lines = System.IO.File.ReadAllLines(_userDataPath, Encoding.UTF8);
-                foreach (var line in lines)
-                {
-                    var data = line.Split(',');
-                    entities.Add(new UserEntity(
-                        Convert.ToInt32(data[0]),
-                        Convert.ToBoolean(data[1]),
-                        data[2],
-                        Convert.ToInt32(data[3]),
-                        Convert.ToInt32(data[4])));
-                }
+                var data = line.Split(',');
+                entities.Add(new UserEntity(
+                    Convert.ToInt32(data[0]),
+                    Convert.ToBoolean(data[1]),
+                    data[2],
+                    Convert.ToInt32(data[3]),
+                    Convert.ToInt32(data[4])));
             }
 
             return entities;
